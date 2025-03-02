@@ -64,13 +64,9 @@ else
   exit 1
 fi
 
-# Giving the Drive time to calm down
-echo "Giving the Drive time to calm down"
-sleep 60s
-
 # Unmount Drive
 echo "Unmounting Drive"
-if umount $MOUNT_PATH; then
+if umount -l $MOUNT_PATH; then
   echo "Drive Unmounted"
 else
   echo "Drive Unmount Failed"
